@@ -1,3 +1,6 @@
+# Overview
+I needed to have a MID server for periodic large file downloads, but was denied permanent resources for a periodic need that granted the access needed. I decided to pursue options for temporary MIDs to handle the use case. I also had an interest in learning about Docker hosted MID Servers. Docker containers turned out to be a great option. I can spin up a MID when needed and shut it down to conserver resources when not being used. There were two downsides to using Docker containers. First, ServiceNow stopped supporting Windows MID Servers in Docker. Second, Docker containers are not auto-updated. This script addressed the second issue, but the first remains.
+
 # Instructions:
 1. Create a user account on the instance first.
     - Do not use the auto-generated password.
@@ -20,9 +23,9 @@
      to the host.
     - A docker-compose.yaml file will be created and an instance started.
 
-# NOTE: 
+# Upgrades: 
   To update the MID Server after a platform patch or upgrade, just
   execute the script again. The existing MID will be shutdown and a 
-  new MID server created and linked to the existing MID Server record
-  in ServiceNow. You will need to re-validate the instance and manually
+  new MID server container created and linked to the existing MID Server record
+  in ServiceNow. You will only need to re-validate the instance and manually
   remove the old docker container.
