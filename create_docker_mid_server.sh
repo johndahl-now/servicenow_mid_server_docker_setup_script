@@ -29,7 +29,7 @@ mid_password="secret"
 # If there is a docker compose file, then make sure the container is stopped.
 if test -f ./docker-compose.yaml; then
     echo "Shutting down the existing MID Server container..."
-    docker-compose down
+    docker compose down
 fi
 
 # Get the instance MID Server version
@@ -91,7 +91,7 @@ services:
 
 EOF
 
-docker-compose up -d
+docker compose up -d
 
 echo "Your MID server will start shortly. Do not forget to validate it!"
 
