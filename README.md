@@ -1,6 +1,8 @@
 # Overview
 I needed to have a MID server for periodic large file downloads, but was denied permanent resources for a periodic need that granted the access needed. I decided to pursue options for temporary MIDs to handle the use case. I also had an interest in learning about Docker hosted MID Servers. Docker containers turned out to be a great option. I can spin up a MID when needed and shut it down to conserver resources when not being used. There were two downsides to using Docker containers. First, ServiceNow stopped supporting Windows MID Servers in Docker. Second, Docker containers are not auto-updated. This script addressed the second issue, but the first remains.
 
+NOTE: This script sets up a very basic MID Server. The compose file contains the ServiceNow credentials in plain text and the export folders is mapped with 777 permissions... so anyone can access the content. Add additional security appropriately for your needs.
+
 # Instructions:
 1. Create a user account on the instance first.
     - Do not use the auto-generated password.
