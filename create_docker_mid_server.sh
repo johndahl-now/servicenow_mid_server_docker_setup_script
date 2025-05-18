@@ -25,6 +25,11 @@ mid_password="secret"
 #       new MID server created and linked to the existing MID Server record
 #       in ServiceNow. You will need to re-validate the instance and manually
 #       remove the old docker container.
+#
+# NOTE: If running on Alpine Linux, you must install curl, jq, unzip, docker, 
+#       and docker-compose, then start the docker service and add the current 
+#       linux user to the docker group before running this script.
+#
 
 # If there is a docker compose file, then make sure the container is stopped.
 if test -f ./docker-compose.yaml; then
