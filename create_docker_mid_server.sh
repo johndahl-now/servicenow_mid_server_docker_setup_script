@@ -7,7 +7,7 @@
 #   3. Set the Internal Integration User flag.
 #   4. Install or validate your host has the jq and unzip packages installed.
 #   5. Set the variables below as needed.
-servicenow_instance="dev219356"
+servicenow_instance="instancename"
 mid_display_name="MID-Server-Name"
 mid_server_name="${servicenow_instance}_docker_linux_mid_server"
 mid_username="demo.mid"
