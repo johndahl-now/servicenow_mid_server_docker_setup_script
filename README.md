@@ -10,7 +10,7 @@ NOTE: This script sets up a very basic MID Server. The compose file contains the
     - Reset it to a valid value. 
 2. Add the `mid_server` role to the new account.
 3. Set the `Internal Integration User` flag.
-4. Install or validate your host has the `jq` and `unzip` packages installed.
+4. Install or validate your host has the `unzip` package installed.
 5. Set the variables below as needed.  
     servicenow_instance="InstanceName"  
     mid_display_name="MID-Server-Name"  
