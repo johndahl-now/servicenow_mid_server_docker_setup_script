@@ -5,13 +5,17 @@
 #         - Do not use the auto-generated password. Reset it to a valid value. 
 #   2. Add the mid_server role to the new account.
 #   3. Set the Internal Integration User flag.
-#   4. Install or validate your host has the unzip package installed.
+#   4. Install or validate your host has the **GNU** version of the following utilities installed. 
+#         **NOTE**: The BSD version that comes with macos may have different switches and behaviors.
+#         bash
+#         curl
+#         unzip
 #   5. Set the variables below as needed.
-servicenow_instance="InstanceName"
-mid_display_name="MID-Server-Name"
-mid_server_name="${servicenow_instance}_docker_linux_mid_server"
-mid_username="demo.mid"
-mid_password="secret"
+servicenow_instance="dev123456"
+mid_display_name="My-MID-Server"
+mid_server_name="my_docker_linux_mid_server"
+mid_username="demo.mid.user"
+mid_password="secret-password"
 create_console_script="no"
 #   6. Execute the script.
 #        - The instance will be queried for the correct MID version
@@ -30,7 +34,6 @@ create_console_script="no"
 # NOTE: If running on Alpine Linux, you must install curl, unzip, docker, 
 #       and docker-compose, then start the docker service and add the current 
 #       linux user to the docker group before running this script.
-#
 
 
 if [[ "$(uname -m)" != "x86_64" ]]; then
@@ -42,7 +45,6 @@ elif [[ "$(uname -s)" != "Linux" ]]; then
     echo "Terminating installation."
     exit
 fi
-
 
 # If there is a docker compose file, then make sure the container is stopped.
 if test -f ./docker-compose.yaml; then
