@@ -14,6 +14,7 @@ I needed to have a MID server for periodic large file downloads, but was denied 
      curl
      unzip
 5. Set the variables below as needed. Values can be set inside the main script or in the secrets.sh file.
+
 ```
     servicenow_instance="dev123456"
     mid_display_name="My-MID-Server"
@@ -22,7 +23,8 @@ I needed to have a MID server for periodic large file downloads, but was denied 
     mid_password="secret-password"
     create_console_script="no"
 ```
-**Note**: The sensitive information can be saved to a separate file and sourced into the script.  
+
+**Note**: The sensitive information can be saved to a separate file and sourced into the script. Remember to "export" the values from the secrets file. 
 
 6. Execute the script.
     - The instance will be queried for the correct MID version
@@ -32,12 +34,12 @@ I needed to have a MID server for periodic large file downloads, but was denied 
       to the host.
     - A docker-compose.yaml file will be created and an instance started.
 
- **NOTE**: To update the MID Server after a platform patch or upgrade, just
+**NOTE**: To update the MID Server after a platform patch or upgrade, just
        execute the script again. The existing MID will be shutdown and a 
        new MID server created and linked to the existing MID Server record
        in ServiceNow. You will need to re-validate the instance and manually
        remove the old docker container.
 
- **NOTE**: If running on Alpine Linux, you must install curl, unzip, docker, 
+**NOTE**: If running on Alpine Linux, you must install curl, unzip, docker, 
        and docker-compose, then start the docker service and add the current 
        linux user to the docker group before running this script.

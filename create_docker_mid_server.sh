@@ -46,6 +46,11 @@ elif [[ "$(uname -s)" != "Linux" ]]; then
     exit
 fi
 
+# Load sensitive information from an external file if one exists.
+if [[ -f ./secrets.sh ]]; then
+    source ./secrets.sh
+fi
+
 # If there is a docker compose file, then make sure the container is stopped.
 if test -f ./docker-compose.yaml; then
     echo "Shutting down the existing MID Server container..."
